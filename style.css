@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+:root{
+    
+--clr-blue: hsl(223, 100%, 88%);
+--clr-light-red: hsl(354, 100%, 66%);
+--clr-gray: hsl(0, 0%, 59%);
+--clr-dark-blue: hsl(209, 33%, 12%);
+}
+a{
+    text-decoration: none;
+}
+button,input,a{
+    font-family: inherit;
+}
+ul{
+    list-style: none;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--clr-blue);
+    font-family: 'Libre Franklin', sans-serif;
+    line-height: 1.5;
+    font-size: 1.25rem;
+    color: var(--clr-gray);
+    padding: 1rem;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main{
+    padding:2rem;
+    margin-top: 3rem;
+}
+main.flex-column{
+    gap:35px;
+}
+img{
+    display: block;
+    width: 100%;
+}
+.logo-container img{
+    max-width: 190px;
+}
+.content.flex-column{
+    gap:0.5rem;
+}
+.content h1{
+    font-weight: 300;
+   
+  
+}
+.content h1 span{
+    font-weight: 700;
+    color: var(--clr-dark-blue);
+}
+.content h2{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--clr-dark-blue);
+}
+.form.flex-column{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.form{
+    margin: 2rem 0;
+}
+
+.form-control input{
+    padding:1rem 2rem;
+    display: inline-block;
+    border-radius: 30px;
+    margin-right: 2rem;
+    border:1px solid var(--clr-gray);
+    position: relative;
+}
+/* .form-control label{
+    position: absolute;
+    color: red;
+} */
+input:focus{
+    outline: transparent;
+}
+.dashboard{
+    max-width: 50em;
+}
+footer{
+    padding: 2rem;
+}
+footer a{
+    color: var(--clr-dark-blue);
+    font-weight: 700;
+}
+footer p{
+    margin: 1rem 0;
+}
+.social-links ul.flex-column{
+    flex-direction: row;
+    gap:40px;
+    justify-content: center;
+    padding: 1rem;
+}
