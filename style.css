@@ -12,6 +12,8 @@
 --clr-light-red: hsl(354, 100%, 66%);
 --clr-gray: hsl(0, 0%, 59%);
 --clr-dark-blue: hsl(209, 33%, 12%);
+--clr-light-blue: hsla(210, 35%, 9%, 0.705);
+--duration:0.8s;
 }
 a{
     text-decoration: none;
@@ -42,7 +44,7 @@ body{
     align-items: center;
 }
 main{
-    padding:0.8rem;
+    padding:0.9rem;
     margin-top: 3rem;
 }
 main.flex-column{
@@ -51,49 +53,57 @@ main.flex-column{
 img{
     display: block;
     width: 100%;
+   
+
 }
 .logo-container img{
     max-width: 190px;
+    animation: grow var(--duration) both;
 }
 .content.flex-column{
     gap:0.5rem;
 }
 .content h1{
     font-weight: 300;
+    animation: slideUp ease var(--duration) forwards;
 }
 .content h1 span{
     font-weight: 700;
-    color: var(--clr-dark-blue);
+    color: var(--clr-dark-blue);    
+    display: inline-block;
+  
+    animation: bounce 1.9s both infinite;
+    animation-delay: 0.9s;
 }
 .content h2{
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--clr-dark-blue);
+    animation: fadeIn 1.9s both;
+    animation-delay: calc(var(--duration) * 1.3);
 }
 .form.flex-column{
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: space-evenly;
     gap:1.8rem;
 }
-
-.form{
+.form-control{
+    position: relative;
+}
+.subscribe__contanier{
     margin: 2rem 0;
     width:clamp(20rem,100%,40rem);
 }
-.form-control{
-    position: relative;
-    
-}
 .form-control input{
-    padding:0.87rem 2rem;
-
-    display: inline-block;
+    padding:1rem 1.4rem;
+    display: block;
     border-radius: 30px;
     margin-bottom: 1.5rem;
     border:1px solid var(--clr-gray);
    font-size: 0.9rem;
-   width:20rem;
+   width:clamp(23rem,100%,40rem);
+   animation: fadeIn 1.9s both;
+   animation-delay: calc(var(--duration) * 1.8);
 }
 .form-control input::placeholder{
     color:var(--clr-gray);
@@ -101,10 +111,10 @@ img{
 .form-control label{
     position: absolute;
     color:var(--clr-light-red);
-    top:70%;
+    top:80%;
     left:8%;
-    font-size: 0.9rem;
-    margin-top: 0.2rem;
+    font-size: 0.98rem;
+
     visibility: hidden;
     font-weight:300;
 }
@@ -112,6 +122,7 @@ img{
 .form-control.error input{
     border:none;
    outline: 1px solid var(--clr-light-red);
+   animation: shake 0.8s both;
 }
 .form-control.error label{
     visibility: visible;
@@ -120,23 +131,33 @@ img{
     outline: 1px solid #2ECC71;
 }
 .btn{
-    padding: 0.78rem 2.7rem;
+    padding: 1rem 2.9rem;
     background-color: var(--clr-dark-blue);
     color: white;
     border-radius: 30px;
-    display: inline-block;
+    display: block;
     align-self: flex-start;
     cursor: pointer;
     text-align: center;
     font-size: 1rem;
     font-weight: 700;
-    border: none;
+    border: none; 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+ transition: background-color 0.82s,
+ opacity 0.8s;
+ animation: fadeIn 1.9s both;
+ animation-delay: calc(var(--duration) * 1.8);
+}
+.btn.success {
+    background-color:#2ECC71;
+    animation: bounce 0.8s both;
 }
 input:focus{
     outline: transparent;
 }
 .dashboard{
     max-width: clamp(30em,80%,50em);
+    animation: grow var(--duration) both;
 }
 footer{
     padding: 2rem;
@@ -150,7 +171,110 @@ footer p{
 }
 .social-links ul.flex-column{
     flex-direction: row;
-    gap:40px;
+    gap:25px;
     justify-content: center;
     padding: 1rem;
 }
+.social-links li{
+    display:inline-block;
+    position:relative;
+    font-size: 1em;
+    margin: 0.15em;
+}
+.social-links i{
+    color: var(--clr-gray);
+    position: absolute;
+    top: 21px;
+    left: 20px;
+    transform: translate(-50%, -50%);
+    transition:all 200ms ease-in-out;
+}
+.social-links a{
+    display: inline-block;
+}
+.social-links a::before{
+    transform: scale(1);
+content:"";
+width:40px;
+height:40px;
+border-radius: 100%;
+display:block;
+background-color: var(--clr-dark-blue);
+transition: all 200ms ease-out;
+
+}
+
+.btn:hover{
+    background-color: var(--clr-light-blue);
+}
+@media(hover:hover){
+    .social-links a:hover::before{
+        transform: scale(0);
+        transition: all 200ms ease-out;
+    }
+    .social-links a:hover i{
+        color: var(--clr-dark-blue);
+        background: var(--clr-dark-blue);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 265ms ease-in;
+    }
+}
+@media (max-width:645px) {
+.form.flex-column{
+    justify-content: flex-start;
+}
+.form-control,
+.btn{
+    flex: 1 0 100%;
+}
+}
+@keyframes shake {
+  20%, 40%, 60%, 80% {
+    transform: translateX(1%);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-1%);
+  }
+  from, to {
+    transform: none;
+  }
+}
+@keyframes bounce {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+@keyframes slideUp {
+    0% {
+        transform: translateY(0);
+    }
+    80%{
+        transform:translateY(-30px) ;
+        opacity:1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity:1;
+    }
+  }
+  @keyframes fadeIn{
+    0%{
+        opacity: 0;
+        
+    }
+    100%{
+        opacity: 1;
+    }
+  }
+  @keyframes grow {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+  }
+/* social media icons 
+
+https://codepen.io/mattbhenley/pen/aRKmgR?editors=1100 */

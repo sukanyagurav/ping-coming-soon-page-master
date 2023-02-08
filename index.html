@@ -14,21 +14,21 @@
 <body>
 <main class="flex-column"> 
   <div class="logo-container">
-    <img src="images/logo.svg" alt="">
+    <img src="images/logo.svg" alt="logo">
   </div>
   <div class="content flex-column">
     <h1>We are launching <span class="bold">soon!</span></h1>
     <h2>Subscribe and get notified</h2>
     <div class="subscribe__contanier" >
       <form class="form flex-column" id="form" novalidate>
-        <div class="form-control flex-column">
+        <div class="form-control">
           <input type="email" id="email" placeholder="Your email address">
-          <label for="email">invalid</label>
+          <label for="email"></label>
         </div>
         <button class="btn">Notify Me</button>
       </form>
     </div>
-    <img src="images/illustration-dashboard.png" alt="" class="dashboard">
+    <img src="images/illustration-dashboard.png" alt="dashboard image" class="dashboard">
   </div>
 </main>
  
@@ -36,9 +36,9 @@
   <footer>
     <div class="social-links ">
       <ul class="flex-column">
-        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="facebook"><i aria-hidden="true" class="fa-brands fa-facebook-f"></i></a></li>
+        <li><a href="#" aria-label="twitter"><i aria-hidden="true" class="fa-brands fa-twitter"></i></a></li>
+        <li><a href="#" aria-label="instagram"><i aria-hidden="true" class="fa-brands fa-instagram"></i></a></li>
       </ul>
     </div>
     <p class="copyright"> &copy; Copyright Ping. All rights reserved.</p>

@@ -21,18 +21,18 @@ function checkEmail(){
 function printError(msg){
     const label =input.nextElementSibling;
    formControl.classList.add('error')
-
     label.textContent=msg;
+   input.getAnimations()[0].play();
 }
 function success(){
     formControl.classList.remove('error');
     formControl.classList.add('success');
     const btn=formControl.nextElementSibling;
-    btn.style.backgroundColor='#2ECC71';
+    btn.classList.add('success');
     
     setTimeout(()=>{
         input.value=''
         formControl.classList.remove('success');
-        formControl.nextElementSibling.style.backgroundColor='hsl(209, 33%, 12%)';
+        btn.classList.remove('success');
     },2000)
 }
