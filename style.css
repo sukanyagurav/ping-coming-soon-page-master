@@ -42,7 +42,7 @@ body{
     align-items: center;
 }
 main{
-    padding:2rem;
+    padding:0.8rem;
     margin-top: 3rem;
 }
 main.flex-column{
@@ -60,8 +60,6 @@ img{
 }
 .content h1{
     font-weight: 300;
-   
-  
 }
 .content h1 span{
     font-weight: 700;
@@ -76,29 +74,69 @@ img{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    gap:1.8rem;
 }
 
 .form{
     margin: 2rem 0;
+    width:clamp(20rem,100%,40rem);
 }
-
+.form-control{
+    position: relative;
+    
+}
 .form-control input{
-    padding:1rem 2rem;
+    padding:0.87rem 2rem;
+
     display: inline-block;
     border-radius: 30px;
-    margin-right: 2rem;
+    margin-bottom: 1.5rem;
     border:1px solid var(--clr-gray);
-    position: relative;
+   font-size: 0.9rem;
+   width:20rem;
 }
-/* .form-control label{
+.form-control input::placeholder{
+    color:var(--clr-gray);
+}
+.form-control label{
     position: absolute;
-    color: red;
-} */
+    color:var(--clr-light-red);
+    top:70%;
+    left:8%;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+    visibility: hidden;
+    font-weight:300;
+}
+
+.form-control.error input{
+    border:none;
+   outline: 1px solid var(--clr-light-red);
+}
+.form-control.error label{
+    visibility: visible;
+}
+.form-control.success input{
+    outline: 1px solid #2ECC71;
+}
+.btn{
+    padding: 0.78rem 2.7rem;
+    background-color: var(--clr-dark-blue);
+    color: white;
+    border-radius: 30px;
+    display: inline-block;
+    align-self: flex-start;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+}
 input:focus{
     outline: transparent;
 }
 .dashboard{
-    max-width: 50em;
+    max-width: clamp(30em,80%,50em);
 }
 footer{
     padding: 2rem;
