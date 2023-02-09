@@ -102,6 +102,9 @@ img{
     border:1px solid var(--clr-gray);
    font-size: 0.9rem;
    width:clamp(23rem,100%,40rem);
+   transition: outline 0.8s;
+   animation: fadeIn 1.9s both;
+    animation-delay: calc(var(--duration) * 2);
 }
 .form-control input::placeholder{
     color:var(--clr-gray);
@@ -142,12 +145,16 @@ img{
     border: none; 
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     transition: background-color 0.8s;
-
+    animation: fadeIn 1.9s both;
+    animation-delay: calc(var(--duration) * 2);
 }
-.btn.success {
+.btn.success{
     background-color:#2ECC71;
-
     animation: bounce 0.8s both;
+}
+
+.btn:hover{
+   opacity:0.9;
 }
 input:focus{
     outline: transparent;
@@ -201,9 +208,6 @@ transition: all 200ms ease-out;
 
 }
 
-.btn:hover{
-    background-color: var(--clr-light-blue);
-}
 @media(hover:hover){
     .social-links a:hover::before{
         transform: scale(0);
