@@ -102,8 +102,7 @@ img{
     border:1px solid var(--clr-gray);
    font-size: 0.9rem;
    width:clamp(23rem,100%,40rem);
-   animation: fadeIn 1.9s both;
-   animation-delay: calc(var(--duration) * 1.8);
+
 }
 .form-control input::placeholder{
     color:var(--clr-gray);
@@ -143,13 +142,12 @@ img{
     font-weight: 700;
     border: none; 
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
- transition: background-color 0.82s,
- opacity 0.8s;
- animation: fadeIn 1.9s both;
- animation-delay: calc(var(--duration) * 1.8);
+    transition: background-color 0.8s;
+
 }
 .btn.success {
     background-color:#2ECC71;
+
     animation: bounce 0.8s both;
 }
 input:focus{

@@ -23,13 +23,13 @@ function printError(msg){
    formControl.classList.add('error')
     label.textContent=msg;
    input.getAnimations()[0].play();
+
 }
 function success(){
     formControl.classList.remove('error');
     formControl.classList.add('success');
     const btn=formControl.nextElementSibling;
     btn.classList.add('success');
-    
     setTimeout(()=>{
         input.value=''
         formControl.classList.remove('success');
