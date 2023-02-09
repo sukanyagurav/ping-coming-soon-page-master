@@ -22,7 +22,13 @@ function printError(msg){
     const label =input.nextElementSibling;
    formControl.classList.add('error')
     label.textContent=msg;
-   input.getAnimations()[0].play();
+    input.getAnimations().forEach((anim)=>{
+
+        anim.cancel();
+        anim.play();
+      
+    })
+
 
 }
 function success(){
@@ -30,6 +36,7 @@ function success(){
     formControl.classList.add('success');
     const btn=formControl.nextElementSibling;
     btn.classList.add('success');
+ 
     setTimeout(()=>{
         input.value=''
         formControl.classList.remove('success');
