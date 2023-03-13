@@ -221,7 +221,7 @@ transition: all 200ms ease-out;
         transition: all 265ms ease-in;
     }
 }
-@media (max-width:645px) {
+@media (max-width:50em) {
 .form.flex-column{
     justify-content: flex-start;
 }
